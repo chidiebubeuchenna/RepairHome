@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:repair_home_twentyfour/screens/cart_page.dart';
 
 class FixPage extends StatelessWidget {
   const FixPage({Key? key}) : super(key: key);
@@ -146,23 +147,32 @@ class FixPage extends StatelessWidget {
 
             Container(
               padding: EdgeInsets.all(20),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Repair',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                    ),
-                    ),
-                    
-                    Text("N5,000")
-                  ],
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => CartPage()));
+                },
+                // child: Ink(height: 100, width: 100, color: Colors.blue),
+                child: Ink(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Repair',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                      ),
+                      ),
+                      
+                      Text("\$52",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),)
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -173,23 +183,31 @@ class FixPage extends StatelessWidget {
                 left: 20,
                 right: 20,
               ),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Setup',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => CartPage()));
+                },
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Setup',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
 
-                    Text("N2,000")
-                  ],
+                      Text("\$12",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),)
+                    ],
+                  ),
                 ),
               ),
             ),

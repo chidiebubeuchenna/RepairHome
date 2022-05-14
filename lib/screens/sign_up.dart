@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:repair_home_twentyfour/screens/home_page.dart';
 import 'package:repair_home_twentyfour/widgets/social_media.dart';
 import 'package:repair_home_twentyfour/widgets/textfield.dart';
 
@@ -78,7 +79,9 @@ class SignUp extends StatelessWidget {
                         ],
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                        },
                         child: Text("Sign Up"),
 
                     )

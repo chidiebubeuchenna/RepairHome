@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:repair_home_twentyfour/screens/cart_page.dart';
+import 'package:repair_home_twentyfour/screens/fix_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,7 +45,12 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.menu),
-                      Icon(Icons.shopping_cart),
+                      IconButton(
+                        icon: Icon(Icons.shopping_cart),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => CartPage()));
+                        },),
                     ],
                   ),
                   const SizedBox(
@@ -232,7 +239,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(
-                          width: 150,
+                          width: 130,
                         ),
                         Container(
                           // width: MediaQuery.of(context).size.width,
@@ -240,8 +247,11 @@ class HomePage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children:[ Icon(
-                                Icons.arrow_forward_ios_rounded),
+                            children:[ IconButton(
+                                icon: Icon(Icons.arrow_forward_ios_rounded),
+                              onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FixPage()));
+                              },),
                           ]),
                         ),
                       ],
@@ -283,7 +293,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(
-                          width: 161,
+                          width: 157,
                         ),
                         Icon(Icons.arrow_forward_ios_rounded),
                       ],
